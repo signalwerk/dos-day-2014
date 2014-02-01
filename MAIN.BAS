@@ -1,3 +1,7 @@
+' dos-day demo by
+' @messagemaetens and signalwerk
+' 2014 - MIT License
+
 DECLARE SUB dline ()
 DECLARE SUB dcircle ()
 SCREEN 12

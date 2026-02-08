@@ -1,0 +1,47 @@
+' dos-day demo by
+' @messagemaetens and signalwerk
+' 2014 - MIT License
+
+DECLARE SUB dline ()
+DECLARE SUB dcircle ()
+Screen 12
+Randomize Timer
+Cls
+
+Do
+    Locate 12, 12
+    Color 15
+    Print "Herzlich Willkommen beim DOS-Tag 2014"
+    Play "O2 T120 mb L16 CEG>C"
+    For i = 1 To 1000 Step 20
+        Call dcircle
+        For i2 = 1 To 9
+            Call dline
+        Next
+    Next
+    Locate 14, 40
+    Print "Viel Spass!"
+    Locate 4, 2
+Loop Until InKey$ = Chr$(27)
+System
+
+Sub dcircle
+    c = Int(Rnd * 15)
+    x = Int(Rnd * 640)
+    y = Int(Rnd * 480)
+    r = Int(Rnd * 40 + 20)
+    Color c
+    Circle (x, y), r
+
+
+End Sub
+
+Sub dline
+    b = Int(Rnd * 1120)
+    s = Int(Rnd * 20)
+    c = 0
+    If s > 18 Then c = 1
+    Line (b, 1)-(1, b), c
+
+End Sub
+
